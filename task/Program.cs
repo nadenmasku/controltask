@@ -1,26 +1,25 @@
 ﻿//Опишем метод сортировки
-// string[] SortMethod(string[] array)
-// {
-    
-//     string[] sortedarray = new string [0];
-//     for (int i = 0; i < array.Length;i++)
-//     {
-//         if (array[i].Length <= 3)
-//         {
-//             Array.Resize(ref sortedarray, sortedarray.Length + 1);
-//             sortedarray[i] = array[i];
-//         }
-//     }
+string[] SortMethod(string[] arr)
+{
+    int size = arr.Length;
+    string[] sortedarray = new string [size];
+    for (int i = 0; i < arr.Length;i++)
+    {
+        if (arr[i].Length <= 3)
+        {
+            sortedarray[i] = arr[i];
+        }
+    }
 
-//     return sortedarray;
-// }
+    return sortedarray;
+}
 
 //Опишем вывод массива
 void PrintArray(string[] array)
 {
-    for (int i = 0; i < array.Length;i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        Console.Write(array[i]);
+        Console.Write(array[i] + " ");
     }
 }
 
@@ -32,8 +31,9 @@ void PrintArray(string[] array)
 
 
 // Зададим первоначальный массив
-string [] toSortArray1 = { "hello", "2", "world", ":-)" };
+string[] toSortArray1 = { "hello", "2", "world", ":-)" };
 // Выведем массив в консоль
-
+PrintArray(toSortArray1);
 Console.WriteLine();
 //Выведем отсортированный массив
+PrintArray(SortMethod(toSortArray1));
